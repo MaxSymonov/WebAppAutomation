@@ -168,7 +168,7 @@ class Tests(unittest.TestCase):
 
        Logger.logger_step(4, 'Crete new incident with recorded video')
 
-       media.MediaPage(self.driver).create_new_incident_add('Motorola test incident', '12345', 'The framework actually works - WOW!')
+       media.MediaPage(self.driver).create_new_incident_add('Test incident', '12345', 'The framework actually works - WOW!')
 
        pass
 
