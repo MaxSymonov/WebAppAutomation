@@ -13,7 +13,7 @@ class DevicesPage:
         self.return_device = (By.XPATH, "//button[@data-original-title='Return Device']")
         self.assign_device = (By.XPATH, "//button[@data-original-title='Assign Device']")
         self.operator_name = (By.XPATH, "//input[@class='form-control tt-input']")
-        self.assign_device_confirm = (By.XPATH, "//button[text()='Add Device']")
+        self.assign_device_confirm = (By.XPATH, "//button[text()='Assign Device']")
         self.status = (By.XPATH, "//span[@class='js-status-text status-text']")
 
     def assign_device_to_user(self):

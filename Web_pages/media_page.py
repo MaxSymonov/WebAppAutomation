@@ -8,22 +8,22 @@ class MediaPage:
     def __init__(self, driver):
         self.driver = driver
         self.media_tab = (By.LINK_TEXT, "Media")
-        self.incidents_tab = (By.LINK_TEXT, "Videos")
+        self.incidents_tab = (By.LINK_TEXT, "Incidents")
         self.delete_footage_button = (By.XPATH, "(//button[contains(@class,'btn btn-default')])[2]")
-        self.delete_incident_button = (By.XPATH, "//button[@data-original-title='Delete video']")
-        self.confirm_delete_incident_button = (By.XPATH, "//button[text()='Button']")
+        self.delete_incident_button = (By.XPATH, "//button[@data-original-title='Delete incident']")
+        self.confirm_delete_incident_button = (By.XPATH, "//button[text()='Delete Incident']")
         self.last_video_duration = (By.XPATH, "//td[@class='col-sm-8']")
         # Video options
         self.create_new_incident = (By.XPATH, "//a[@class='btn video-new-incident']")
         self.add_media_to_existing_incident = (By.XPATH, "//a[@class='btn video-add-to-incident']")
-        self.delete_media = (By.XPATH, "//button[@class='btn somebutton']")
+        self.delete_media = (By.XPATH, "//button[@class='btn video-delete']")
         self.confirm_delete = (By.XPATH, "//button[text()='yes']")
         self.dropdown_menu = (By.XPATH, "//button[@class='btn dropdown-toggle']")
         # New incident fields
         self.incident_title = (By.ID, "inputCustom55")
         self.reference_code = (By.ID, "inputCustom59")
         self.notes = (By.ID, "inputCustom60")
-        self.create_incident_button = (By.XPATH, "//button[text()='Create stuff']")
+        self.create_incident_button = (By.XPATH, "//button[text()='Create incident']")
 
     def open_media_tab(self):
         self.driver.find_element(*self.media_tab).click()
