@@ -71,6 +71,7 @@ class Tests(unittest.TestCase):
         test_data_file_path = os.path.join(script_dir, 'web_testdata.yaml')
         self.login_page = login.LoginPage(self.driver, test_data_file_path)
         self.devices_page = devices.DevicesPage(self.driver, test_data_file_path)
+        self.driver.implicitly_wait(30)
         self.driver.get('http://localhost:9080/')
 
     def tearDown(self) -> None:    
