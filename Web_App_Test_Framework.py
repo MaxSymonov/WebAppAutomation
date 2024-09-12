@@ -180,8 +180,11 @@ class Functions:
     @staticmethod
     def refresh_page(self):
         self.driver.refresh()
-        alert = Alert(self.driver)
-        alert.accept()
+        try:
+            alert = Alert(self.driver)
+            alert.accept()
+        except NoAlertPresentException:
+            pass
 
     @staticmethod
     def send_adb_shell_command(command):
@@ -195,11 +198,13 @@ class Functions:
     @staticmethod
     def verify_page_title(driver, expected_title):
         actual_title = driver.title
+        assert actual_title == expected_title, f"Expected title '{expected_title}', but got '{actual_title}'"
         return actual_title == expected_title
-    
+
     @staticmethod
     def verify_title_contains(driver, expected_substring):
         actual_title = driver.title
+        assert expected_substring in actual_title, f"Expected title to contain '{expected_substring}', but got '{actual_title}'"
         return expected_substring in actual_title
 
 class Logger:
